@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>Độ F:
+    <input id="inputF" type="number"
+           oninput="Change(this.value)"
+           onchange="Change(this.value)"/>
+    </p>
+    <p id="outputC"><span>Độ C:</span></p>
+    <SCRIPT>
+        function Change(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputC").innerHTML=(valNum-32) / 1.8;
+        }
+    </SCRIPT>
+    <script>
+
+        function processConfirm(answer) {
+            let result = "";
+            if (answer) {
+                result = "Excellent. We'll play a nice game of chess.";
+            } else {
+                result = "Maybe later then.";
+            }
+            return result;
+        }
+
+        let confirmAnswer = confirm("Shall we play a game?");
+        let theAnswer = processConfirm(confirmAnswer);
+        alert(theAnswer);
+    </script>
+</form>
+</body>
+</html>
